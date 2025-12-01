@@ -1,48 +1,76 @@
-# Sakila Database Analysis
+# Exploring the Sakila Database: A Journey Through Data
 
 ## Project Purpose
-The purpose of this project is to explore the Sakila database, answer common business questions, and extract actionable insights. This demonstrates my ability to work with SQL queries, aggregate data, and provide business-relevant analysis.
+The purpose of this project is to explore the Sakila database, answer common business questions, and extract actionable insights. This demonstrates my ability to work with SQL queries, aggregate data, and provide business-relevant analysis. My goal wasn’t just to run queries, but to understand the story behind the numbers. Here’s what I discovered along the way.
 
-## Business Questions Answered
-1. Inactive Customers and Their Rental Count
-2. Top 5 Actors by Film Count
-3. Revenue by Category
-4. Monthly Rental Trends
-5. Customers with Most Rentals
-6. Films Never Rented
-7. Average Rental Duration by Category
-8. Payment Analysis by Store
-9. Top-Rented Films per Year
-10. Actor Film Participation Distribution
-11. Customer Spending by Category
-12. Staff Activity Overview
-13. List Actors in "Academy Dinosaur"
-14. Films Per Category
-15. Film Titles and Their Language
-16. Customers and Their Store's City
-17. Rentals with Film Title and Customer Name
-18. Total Payment Amount Per Staff Member
-19. Identified films that have never been rented.
-20. Inventory Count Per Store
-21. Inactive Customers and Their Rental Count
-22. Top 5 Actors by Film Count
-23. Title and Language of All Films
-25. *Actors in 'AFRICAN EGG'
-26. Customer Who Spent the Most
-27. Staff Rentals and Revenue
-28. Customers With No Rentals
-29. Total Number of Actors
-30. Customers Living in London
-31. Number of Films Per Category
-32. Films Above Average Rental Rate
-33. Total Revenue Per Store
-34. Top 5 Most Rented Films  
+## What I Set Out to Learn
 
-## How I Solved Them
+Stepping into the Sakila database felt like exploring a small movie rental universe — customers, films, actors, payments, stores… so much happening all at once.  
 
-- Used **JOINs** to connect related tables and retrieve linked data.
-- Applied **aggregate functions** like `COUNT`, `SUM`, and `AVG` to summarize information.
-- Filtered data with **WHERE** clauses and **HAVING** clauses for filtering data.
-- Applied **GROUP BY** and **ORDER BY** to organize, to highlight key trends and rank results.
-- Used **subqueries** to filter data relative to overall metrics (e.g., films above average rental rate).
-- Used **LEFT JOIN** or **NOT EXISTS** to identify missing relationships (e.g., films never rented, customers with no rentals).
+I wanted to answer questions like:
+
+- Which customers are truly active, and who could use a nudge?  
+- Which films are hits, and which sit on the shelves unnoticed?  
+- How does revenue and performance vary across stores and categories?  
+- And importantly, how can I use SQL — especially **window functions** — to uncover trends I might otherwise miss?
+
+---
+
+## Insights from the Data
+
+Digging into the database, some patterns jumped out:
+
+- Even “inactive” customers weren’t completely gone. Many rented occasionally. That latent engagement told me there’s room for **targeted promotions or re-engagement campaigns**.  
+- Some actors and films dominate. Top actors appeared in dozens of films, while the most rented movies consistently brought in revenue. Understanding this helped me see **who and what drives popularity**.  
+- Revenue isn’t evenly spread. Categories like **Family** and **Action** and certain stores outperform the rest — a reminder that **not all data points carry the same weight**.  
+- Timing matters. Rentals peak during certain months, likely around holidays or events, which makes planning promotions, staffing, and inventory much smarter.  
+- Segmenting customers works. Top spenders, regional clusters, and high-frequency renters all have different needs and opportunities for engagement.  
+- Underperforming films are just as important as hits. Identifying movies that never rented gave me ideas for **bundling, promotion, or removal**.  
+- And finally, connecting perspectives — rentals, payments, inventory, staff activity — reveals **hidden patterns you wouldn’t see in isolated numbers**.
+
+---
+
+## Lessons from Window Functions
+
+Working with window functions completely changed how I think about SQL.  
+
+- **Window functions don’t collapse rows.** They let you see trends while keeping all the original data visible — a huge shift in mindset.  
+- **ROW_NUMBER, RANK, and DENSE_RANK** behave differently — testing them on real data made the distinctions crystal clear.  
+- **LAG** is a lifesaver. Accessing the previous row without joins or subqueries felt almost magical.  
+- **CTEs simplify everything.** Breaking queries into stages makes complex logic easier to read and debug.  
+- **Running totals teach precision.** ORDER BY inside the window frame controls progression — once understood, cumulative calculations became intuitive.  
+- Multi-window analyses — joining tables, ranking, aggregating, and filtering — **showed how window functions fit into real workflows**, not just theory.  
+
+By the end, I realized that window functions aren’t just SQL features; they’re tools for **telling the story hidden in the data**.
+
+---
+
+## Practical Tips I Picked Up
+
+- Start with **questions, not queries**. Know what you want to learn before writing SQL.  
+- Break complex logic into **CTEs** instead of one long query.  
+- Test similar functions side-by-side. ROW_NUMBER vs. RANK vs. DENSE_RANK clicks when you see them in action.  
+- Use **LAG and LEAD** for previous or next row logic — it avoids messy joins.  
+- Pay attention to **window frames**. ORDER BY and PARTITION BY can completely change your results.  
+- Export or visualize results to spot patterns. Numbers are one thing; charts make trends obvious.  
+- Document assumptions and double-check each step. It saves headaches later.  
+
+---
+
+## Key Takeaways
+
+1. **Data tells stories.** Look beyond aggregates to see what’s really happening.  
+2. **Window functions unlock insights.** They reveal trends, rankings, and previous values without collapsing data.  
+3. **Break it down.** Stepwise queries, CTEs, and logical ordering make analysis manageable.  
+4. **Insights lead to action.** Knowing your high-value customers, best-performing films, and seasonal patterns lets you make smarter decisions.  
+
+---
+
+## Technologies Used
+
+- **SQL (MySQL)** – querying, aggregation, and window functions  
+- **Sakila Database** – sample dataset for films, customers, rentals, and staff  
+
+---
+
+This README tells the story of my **journey through Sakila**, from raw data to actionable insights. It’s not just about queries — it’s about **learning to think with data**.
