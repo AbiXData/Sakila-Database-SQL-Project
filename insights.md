@@ -1,127 +1,29 @@
-# Sakila Project Insights
+## Insights from the Data
 
-## Q1: Inactive Customers and Their Rental Count
-- Many inactive customers still rented occasionally, showing latent engagement.
-- Suggests opportunity for re-engagement campaigns or targeted promotions.
+Digging into the database, some patterns jumped out, and each revealed something meaningful about customer behavior, film popularity, and business performance:
 
-## Q2: Top 5 Actors by Film Count
-- The top actors appear in 35–45 films each.
-- Shows most frequently cast actors; useful for casting or promotions, useful for casting and marketing analysis.
+- **Inactive Customers Still Matter.** Even customers labeled as inactive had occasional rentals. This means engagement isn’t binary — occasional activity can signal latent interest. Targeted campaigns or reminders could reactivate these users and increase revenue.  
 
-## Q3: Revenue by Category
-- Highest revenue generated from "Family" and "Action" categories.
-- Suggests these are the most profitable genres; marketing can focus on promoting these films.
+- **High-Value Customers Drive Revenue.** A small set of top customers rent significantly more than average. Recognizing these high-value customers allows for **loyalty programs, VIP promotions, or tailored marketing** that reward frequent renters.  
 
-## Q4: Monthly Rental Trends
-- Rental activity peaks in certain months, likely corresponding to holidays or seasonal trends.
-- Useful for planning promotions, staffing, and inventory management.
+- **Actor Influence Shapes Film Popularity.** Certain actors appear in dozens of films and consistently attract rentals. Understanding this can guide **casting choices, promotion, and cross-marketing strategies** for films with high-performing actors.  
 
-## Q5: Customers with Most Rentals
-- Top customers rent significantly more than average customers.
-- These high-value customers could be targeted for loyalty programs or special offers.
+- **Film Performance Varies Widely.** While some films are rented repeatedly, a noticeable number of films are **never rented**. These underperforming films could be bundled in promotions, discounted, or reviewed for removal, optimizing inventory and shelf space.  
 
-## Q6: Films Never Rented
-- Several films have never been rented, indicating either low demand or insufficient promotion.
-- These films could be bundled in promotions or investigated for removal.
+- **Revenue is Concentrated in Key Categories.** “Family” and “Action” films generate the most revenue, showing that genre preferences strongly influence business outcomes. Marketing and stocking decisions should reflect these trends.  
 
-## Q7: Average Rental Duration by Category
-- Some categories (e.g., Adventure, Sci-Fi) have longer average rental durations.
-- Helps in inventory planning and understanding customer preferences.
+- **Monthly Rental Trends Highlight Seasonality.** Rentals peak during specific months — likely corresponding to holidays or seasonal events. This knowledge can inform **staffing, inventory planning, and marketing campaigns** to capitalize on high-demand periods.  
 
-## Q8: Payment Analysis by Store
-- Revenue distribution differs by store; some stores outperform others.
-- Useful for evaluating store performance and allocating resources efficiently.
+- **Store Performance is Uneven.** Some stores outperform others in revenue and rental volume. Understanding **regional performance differences** can help allocate resources, staff, and marketing budgets effectively.  
 
-## Q9: Top-Rented Films per Year
-- Rental popularity shifts yearly; some films remain consistently popular.
-- Useful for marketing campaigns and understanding changing consumer trends.
+- **Average Rental Duration Varies by Genre.** Adventure and Sci-Fi categories show longer average rental durations, suggesting customers engage more deeply with certain genres. This can influence **inventory rotation and stocking decisions**.  
 
-## Q10: Actor Film Participation Distribution
-- Most actors appear in fewer films, while a few appear in many.
-- Shows concentration of work among top actors, highlighting key talents.
+- **Payment Patterns Reveal Staff and Store Contributions.** Tracking total payments per staff member and per store highlights **top performers** and areas where efficiency or training may be improved.  
 
-## Q11: Customer Spending by Category
-- Top-spending customers generate significant revenue.
-- Identifying these customers can inform targeted promotions and loyalty strategies.
+- **Customer Segmentation Reveals Marketing Opportunities.** Customers in specific regions (e.g., London) or those with high spending patterns are perfect targets for **localized promotions, loyalty programs, and personalized campaigns**.  
 
-## Q12: Staff Activity Overview
-- Staff rental handling varies significantly; some staff handle many more rentals.
-- Useful for performance evaluation, workload management, and reward allocation.
--
-## Q13: List Actors in "Academy Dinosaur"
-- Retrieved all actors who appeared in "Academy Dinosaur".
-- Insight: Shows cast size for the film and allows understanding of actor distribution across films.
+- **Combining Multiple Perspectives Yields Deeper Insights.** Looking at rentals, inventory, payments, and staff performance together uncovered patterns invisible when analyzed individually. For example, a film may rent often in one store but not in another, revealing **regional preferences** and opportunities for tailored marketing.  
 
-## Q14: Films Per Category
-- Counted films in each category.
-- Insight: Identifies which genres have the most content; useful for content planning.
-
-## Q15: Film Titles and Their Language
-- Retrieved film titles along with language names.
-- Insight: Highlights multilingual offerings and potential localization needs.
-
-## Q16: Customers and Their Store's City
-- Listed customers and the city of their registered store.
-- Insight: Shows customer distribution by store location; helps in regional marketing.
-
-## Q17: Rentals with Film Title and Customer Name
-- Listed all rentals with film title and customer name.
-- Insight: Provides complete rental history; can identify popular films and active customers.
-
-## Q18: Total Payment Amount Per Staff Member
-- Calculated total payments processed by each staff.
-- Insight: Identifies top-performing staff and revenue contribution per employee.
-
-## Q19: Films That Are Not Rented
-- Found films never rented.
-- Insight: Highlights underperforming inventory; may indicate films that need promotion.
-
-## Q20: Inventory Count Per Store
-- Counted inventory items per store.
-- Insight: Shows stock levels by store; helps with inventory management.
-
-## Q21: Title and Language of All Films
-- Retrieved all film titles and their language.
-- Insight: Helps analyze content distribution and language diversity.
-
-## Q22: Actors in 'AFRICAN EGG'
-- Retrieved actors who appeared in "AFRICAN EGG".
-- Insight: Shows specific film cast; useful for detailed film analytics.
-
-## Q23: Customer Who Spent the Most
-- Found the customer with the highest total spending.
-- Insight: Identifies high-value customers for loyalty programs or VIP treatment.
-
-## Q24: Staff Rentals and Revenue
-- Listed staff members, number of rentals processed, and total revenue.
-- Insight: Shows staff productivity and revenue generation; helps with performance evaluation.
-
-## Q25: Customers With No Rentals
-- Retrieved customers with no rentals.
-- Insight: Identifies dormant customers; potential targets for engagement campaigns.
-
-## Q26: Total Number of Actors
-- Counted total actors in the database.
-- Insight: Gives overall scale of talent in the database; baseline for casting metrics.
-
-## Q27: Customers Living in London
-- Retrieved full names of customers in London.
-- Insight: Regional customer focus; useful for localized marketing or analysis.
-
-## Q28: Number of Films Per Category
-- Displayed category names and number of films.
-- Insight: Shows content availability per genre; informs inventory or promotion strategies.
-
-## Q29: Films Above Average Rental Rate
-- Listed films with rental rates higher than average.
-- Insight: Identifies premium films; can inform pricing or marketing strategies.
-
-## Q30: Total Revenue Per Store
-- Calculated total revenue for each store.
-- Insight: Shows store performance; useful for strategic decision-making.
-
-## Q31: Top 5 Most Rented Films
-- Retrieved top 5 films with highest rentals.
-- Insight: Identifies most popular content; can guide recommendations and promotions.
+- **Window Functions Provide Context.** Using ROW_NUMBER, RANK, DENSE_RANK, and LAG allowed me to **see trends across rows without losing detail**, revealing high-performing films, top customers, and rental sequences in ways aggregates alone couldn’t.  
 
 
