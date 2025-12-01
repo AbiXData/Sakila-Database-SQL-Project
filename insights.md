@@ -2,7 +2,7 @@
 
 Digging into the database, some patterns jumped out, and each revealed something meaningful about customer behavior, film popularity, and business performance:
 
-- **Inactive Customers Still Matter.** Even customers labeled as inactive had occasional rentals. This means engagement isn’t binary — occasional activity can signal latent interest. Targeted campaigns or reminders could reactivate these users and increase revenue.  
+- **Inactive Customers Still Matter.** Even customers labeled as inactive had occasional rentals. This means engagement isn’t binary, occasional activity can signal latent interest. Targeted campaigns or reminders could reactivate these users and increase revenue.  
 
 - **High-Value Customers Drive Revenue.** A small set of top customers rent significantly more than average. Recognizing these high-value customers allows for **loyalty programs, VIP promotions, or tailored marketing** that reward frequent renters.  
 
@@ -12,7 +12,7 @@ Digging into the database, some patterns jumped out, and each revealed something
 
 - **Revenue is Concentrated in Key Categories.** “Family” and “Action” films generate the most revenue, showing that genre preferences strongly influence business outcomes. Marketing and stocking decisions should reflect these trends.  
 
-- **Monthly Rental Trends Highlight Seasonality.** Rentals peak during specific months — likely corresponding to holidays or seasonal events. This knowledge can inform **staffing, inventory planning, and marketing campaigns** to capitalize on high-demand periods.  
+- **Monthly Rental Trends Highlight Seasonality.** Rentals peak during specific months, likely corresponding to holidays or seasonal events. This knowledge can inform **staffing, inventory planning, and marketing campaigns** to capitalize on high-demand periods.  
 
 - **Store Performance is Uneven.** Some stores outperform others in revenue and rental volume. Understanding **regional performance differences** can help allocate resources, staff, and marketing budgets effectively.  
 
