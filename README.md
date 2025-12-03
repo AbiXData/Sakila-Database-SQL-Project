@@ -15,6 +15,19 @@ I wanted to answer questions like:
 - And importantly, how can I use SQL, especially **window functions** to uncover trends I might otherwise miss?
 
 ---
+## Insights from the Data
+
+Digging into the database, some patterns jumped out:
+
+- Even “inactive” customers weren’t completely gone. Many rented occasionally. That latent engagement told me there’s room for **targeted promotions or re-engagement campaigns**.  
+- Some actors and films dominate. Top actors appeared in dozens of films, while the most rented movies consistently brought in revenue. Understanding this helped me see **who and what drives popularity**.  
+- Revenue isn’t evenly spread. Categories like **Family** and **Action** and certain stores outperform the other and that is a reminder that **not all data points carry the same weight**.  
+- Timing matters. Rentals peak during certain months, likely around holidays or events, which makes planning promotions, staffing, and inventory much smarter.  
+- Segmenting customers works. Top spenders, regional clusters, and high-frequency renters all have different needs and opportunities for engagement.  
+- Underperforming films are just as important as hits. Identifying movies that never rented gave me ideas for **bundling, promotion, or removal**.  
+- And finally, connecting perspectives, rentals, payments, inventory, staff activity, reveals **hidden patterns you wouldn’t see in isolated numbers**.
+
+---
 
 ## Lessons from Window Functions
 
